@@ -1,0 +1,20 @@
+{
+  "name": "rh-universal-footer",
+  "description": "A universal footer web component.",
+  "main": "index.js",
+  "authors": [
+    "Kyle Buchanan <kylebuch8@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/redhataccess/rh-universal-footer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.7.22"
+  }
+}

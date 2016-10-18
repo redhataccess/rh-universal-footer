@@ -1,0 +1,36 @@
+<template id="template">
+  <style>
+    footer {
+      background: #292e33;
+      background-image: linear-gradient(to bottom,#000,#292e33);
+      padding: 20px 15px;
+    }
+  </style>
+
+  <footer>
+    <img src="https://access.redhat.com/chrome_themes/nimbus/img/l_redhat-reverse.png" alt="Red Hat">
+    <content select="[rhwc-aux-nav]">
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </content>
+  </footer>
+</template>
+
+<script>
+  (function () {
+    var importDoc = document._currentScript.ownerDocument;
+    var rhUniversalFooter = Object.create(HTMLElement.prototype);
+
+    rhUniversalFooter.createdCallback = function () {
+      var root = this.createShadowRoot();
+      var template = importDoc.querySelector('#template');
+      var clone = document.importNode(template.content, true);
+
+      root.appendChild(clone);
+    };
+
+    document.registerElement('rh-universal-footer', { prototype: rhUniversalFooter });
+  }());
+</script>
